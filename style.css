@@ -1,0 +1,118 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8bbd0;
+  color: #6a1b9a;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  position: relative;
+  overflow-y: scroll; /* Allow scrolling vertically */
+}
+
+.container {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-bottom: 100px; /* Space at bottom for button */
+}
+
+/* Title Styling */
+.title {
+  font-size: 3.5rem;
+  color: #d81b60;
+  margin-bottom: 20px;
+}
+
+/* Intro Styling */
+.intro {
+  font-size: 1.4rem;
+  color: #880e4f;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* Balloon Sticker Styling */
+.balloon-stickers {
+  position: absolute;
+  bottom: -100px; /* Start below the page */
+  left: 0;
+  right: 0;
+  pointer-events: none; /* Allow interaction with other content */
+  z-index: 1;
+}
+
+.balloon {
+  width: 80px; /* Size of the balloon images */
+  height: auto;
+  position: absolute;
+  animation: floatBalloons 10s ease-in-out infinite;
+}
+
+@keyframes floatBalloons {
+  0% {
+    transform: translateY(0); /* Start at the bottom */
+  }
+  100% {
+    transform: translateY(-100vh); /* Move up the screen */
+  }
+}
+
+/* Randomly position the balloons */
+.balloon:nth-child(1) {
+  left: 10%;
+  animation-duration: 15s;
+  animation-delay: 2s;
+}
+
+.balloon:nth-child(2) {
+  left: 30%;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+
+.balloon:nth-child(3) {
+  left: 50%;
+  animation-duration: 20s;
+  animation-delay: 4s;
+}
+
+.balloon:nth-child(4) {
+  left: 70%;
+  animation-duration: 25s;
+  animation-delay: 5s;
+}
+
+/* Message Styling */
+.message {
+  font-size: 1.6rem;
+  color: #6a1b9a;
+  margin-top: 20px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* Button Styling */
+.start-button {
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+  background-color: #c2185b;
+}
+
+/* Mobile Friendly Layout */
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  .message { font-size: 1.2rem; }
+  .start-button { padding: 12px 25px; font-size: 1.1rem; }
+}
